@@ -1,5 +1,5 @@
 {
-  "name": "foodie-fusion-backend",
+  "name": "quick-bite-backend",
   "version": "1.0.0",
   "description": "This is Food_delivery Application,where users can Order their favorite Food items and make the Payment to Place their orders. ",
   "main": "server.js",
