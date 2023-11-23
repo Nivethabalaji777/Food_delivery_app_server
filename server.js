@@ -4,13 +4,19 @@ const app = express();
 require("dotenv").config();
 // --------------------
 app.use(express.json());
-app.use(
-  cors({
-    origin: `${process.env.CLIENT_URL}`, 
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
-  })
-);
+// app.use(
+//   cors({
+//     origin: `${process.env.CLIENT_URL}`, 
+//     credentials:true,            //access-control-allow-credentials:true
+//     optionSuccessStatus:200
+//   })
+// );
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', `${process.env.CLIENT_URL}`);
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 // --------------------
 const Pizza = require("./Models/Food_Items");
 require("./database");
