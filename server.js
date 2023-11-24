@@ -1,9 +1,11 @@
 const express = require("express");
+const bodyparser = require("body-parser");
 const cors = require("cors");
 const app = express();
 require("dotenv").config();
 // --------------------
 app.use(express.json());
+app.use(bodyparser.json());
 app.use(
   cors({
     origin: `${process.env.CLIENT_URL}`,
