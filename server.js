@@ -6,11 +6,7 @@ require("dotenv").config();
 // --------------------
 app.use(express.json());
 app.use(bodyparser.json());
-app.use(
-  cors({
-    origin: `${process.env.CLIENT_URL}`,
-  })
-);
+app.use(cors());
 
 // --------------------
 const Pizza = require("./Models/Food_Items");
